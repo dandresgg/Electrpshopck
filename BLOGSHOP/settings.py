@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#xo($@=vq$j-*=2e=3s_l+8(z_-!uewiez!yay83b)esdj$y37'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'electroshopckblog.herokuapp.com']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'blog',
 
     'whitenoise.runserver_nostatic',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
