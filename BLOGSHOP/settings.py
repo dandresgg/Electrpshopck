@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -147,3 +148,13 @@ MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 # MEDIA_URL: 'https://storage.googleapis.com/ltdf-bucked/media/'
 
 MEDIA_URL = '/media/'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hxnqh55sq',
+    'API_KEY': '121555518461326',
+    'API_SECRET': 'bE7vyr1FCGJm3c5YUZQUTguPBvk',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+django_heroku.settings(locals())
