@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link href="{% static "css/blog.css" %}" rel="stylesheet">
+</head>
+<body>
+	<div id="content">	
+		{% include "navbar.html" %}	
+
+		{% block content%}
+		{% endblock %}
+
+	</div>
+	<div id="sidebar">
+		{% block sidebar %}
+		{% endblock %}
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $( document ).ready(function(){
+        $('ul.navp li a:first').addClass('active-panel');
+        $('.info article').hide();
+        $('.info article:first').show();
+        $('.sidebar-info-r article:first').show();
+        $('.sidebar-info-c article:first').hide();
+
+
+
+        $('ul.navp li a').click(function(){
+            $('ul.navp li a').removeClass('active-panel');
+            $(this).addClass('active-panel');
+            $('.info article').hide();
+            $('.sidebar-info article').hide();
+
+            var activeTab = $(this).attr('href');
+            console.log(activeTab);
+            $(activeTab).show();
+            if(activeTab == "#tab1"){
+            	$('.sidebar-info-r article:first').show();
+            	$('.infos article:first').show();
+            }else{
+            	$('.sidebar-info-r article').hide();
+
+            }
+            return false;
+        });
+
+        $('ul.navp-sub li a:first').addClass('active-panel-s');
+        $('.infos article').hide();
+        $('.infos article:first').show();
+
+
+        $('ul.navp-sub li a').click(function(){
+            $('ul.navp-sub li a').removeClass('active-panel-s');
+            $(this).addClass('active-panel');
+            $('.infos article').hide();            
+
+            var activeTab2 = $(this).attr('href');
+            console.log(activeTab2);            
+            $(activeTab2).show();
+            return false;
+        });
+    });
+</script>
+
+</body>
+</html>

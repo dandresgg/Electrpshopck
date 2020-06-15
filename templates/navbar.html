@@ -1,0 +1,18 @@
+{% if component %}
+	<h1>{{ component.title }}</h1>
+{% elif devise %}	
+	<h1>{{ devise }}</h1>
+{% else %}
+	<h1>Electroshopck</h1>
+{% endif %}
+
+<div>
+<nav class="navbar">
+ <ul><a href="{% url "blog:main_page" %}">Home</a></ul>
+ <ul><a href="{% url "blog:pasive" %}">Pasivos</a></ul>
+ <ul><a href="{% url "blog:active" %}">Activos</a></ul>
+</nav>
+</div>
+
+
+ 

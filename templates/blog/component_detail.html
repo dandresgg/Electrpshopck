@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{ component.title }}
+{% endblock %}
+
+{% block content %}
+	<h3> Descripción </h3>
+	<h5>{{ component.description}}</h5>
+	<h3>Caracteristicas</h3>
+	<h5>{{ component.features }}</h5>
+	<h3>Aplicaciones</h3>
+	<h5>{{ component.aplications }}</h5>
+	
+
+{% endblock %}
+
+{% block sidebar %}
+		<h3 class="sidebar_color">Informacion complementaria</h3>
+		<p>
+		<img style="width: 100%; object-fit: cover;" src="{{ component.image.url }}" alt="{{ component.title }}">
+		<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
+
+{% endblock %}

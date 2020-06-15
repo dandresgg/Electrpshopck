@@ -1,0 +1,128 @@
+{% extends "base.html"%}
+
+{% block title%}
+	Dispositivos pasivos
+{% endblock %}
+
+{% block content %}
+
+<ul class="navp">	
+	<li><a href="#tab1"> Resistencias </a></li>
+ 	<li><a href="#tab2"> Capacitores </a></li>
+ 	<li><a href="#tab3"> Diodos </a></li>
+</ul>
+
+
+<div class="info">
+	
+<article id="tab1">
+
+    <ul class="navp-sub"> 
+      <li><a href="#stab1" id="resistor"> Metalicas </a></li>
+      <li><a href="#stab2"> Potencia </a></li>
+      <li><a href="#stab3"> Potenciometros </a></li>
+      <li><a href="#stab4"> Trimmers </a></li>
+    </ul>
+
+<div class="infos">
+  <article id="stab1">
+      {% for resistor_m in resistors_m %}
+      	<h2>
+            <a href="{% url "blog:details" resistor_m.slug %}">{{ resistor_m.slug }}</a>
+        </h2>
+        <p class="date">
+          {{ resistor_m.title|truncatewords_html:30  }}
+        </p>
+      {% endfor%}
+  </article>
+
+  <article id="stab2">
+    {% for resistor_p  in resistors_p %}
+      <h2>
+          <a href="{% url "blog:details" resistor_p.slug %}">{{ resistor_p.slug }}</a>
+      </h2>
+      <p class="date">
+        {{ resistor_p.title|truncatewords_html:30  }}
+      </p>
+    {% endfor%}
+</article>
+
+<article id="stab3">
+    {% for resistor_potenciometer in resistors_potenciometer %}
+      <h2>
+          <a href="{% url "blog:details" resistor_potenciometer.slug %}">{{ resistor_potenciometer.slug }}</a>
+      </h2>
+      <p class="date">
+        {{ resistor_potenciometer.title|truncatewords_html:30  }}
+      </p>
+    {% endfor%}
+</article>
+
+<article id="stab4">
+    {% for resistor_trimmer in resistors_trimmer %}
+      <h2>
+          <a href="{% url "blog:details" resistor_trimmer.slug %}">{{ resistor_trimmer.slug }}</a>
+      </h2>
+      <p class="date">
+        {{ resistor_trimmer.title|truncatewords_html:30  }}
+      </p>
+    {% endfor%}
+</article>
+</div>
+
+</article>
+
+<article id="tab2">
+
+    <ul class="navp-sub"> 
+      <li><a href="#sab1"> Ceramico </a></li>
+      <li><a href="#stab2"> Electrolitico </a></li>
+      <li><a href="#stab3"> Tantalio </a></li>
+      <li><a href="#stab4"> Poliester </a></li>
+    </ul>
+
+  {% for capacitor in capacitors %}
+    <h2>
+        <a href="{% url "blog:details" capacitor.slug %}">{{ capacitor.slug }}</a>
+    </h2>
+    <p class="date">
+      {{ capacitor.title|truncatewords_html:30  }}
+    </p>
+  {% endfor%}
+</article>
+
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+<div class="sidebar-info-r">
+  <article id="side-tab1">
+      {% for resistor_general in resistors_general %}
+
+        <h2>
+            <a href="{% url "blog:details" resistor_general.slug %}">{{ resistor_general.title }}</a>
+        </h2>
+
+        <p>
+          {{ resistor_general.description|truncatewords_html:30  }}
+        </p>
+
+        
+
+            <img style="width: 100%; object-fit: cover;" src="{{ resistor_general.image.url }}" alt="{{ component.title }}">
+
+        <p>
+          {{ resistor_general.features|truncatewords_html:30  }}
+        </p>
+
+      {% endfor%}
+  </article>
+</div>
+
+<div class="sidebar-info-c">
+  <article>
+  ss
+  </article>
+</div>
+{% endblock %}

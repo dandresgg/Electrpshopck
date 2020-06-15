@@ -1,0 +1,1 @@
+web: gunicorn BLOGSHOP.wsgi --log-file -
