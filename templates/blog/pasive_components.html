@@ -1,4 +1,5 @@
 {% extends "base.html"%}
+{% load blog_tags %}
 
 {% block title%}
 	Dispositivos pasivos
@@ -113,7 +114,7 @@
             <img style="width: 100%; object-fit: cover;" src="{{ resistor_general.image.url }}" alt="{{ component.title }}">
 
         <p>
-          {{ resistor_general.features|truncatewords_html:30  }}
+          {{ resistor_general.features|markdown  }}
         </p>
 
       {% endfor%}
