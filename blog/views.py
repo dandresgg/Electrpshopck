@@ -24,7 +24,7 @@ class PasiveView(ListView):
 	def get_context_data(self, *args, **kwargs):
 		resistors_c = Resistors.objects.filter(division__contains='carbon')
 		resistors_t = Resistors.objects.filter(division__contains='termistor')
-		resistors_potenciometer = Resistors.objects.filter(division__contains='potenciomenter')
+		resistors_potenciometer = Resistors.objects.filter(division__contains='potenciometer')
 		resistors_trimmer = Resistors.objects.filter(division__contains='acuracy')
 		resistors_general = Resistors.objects.filter(division__contains='general')
 		capacitors = Capacitors.objects.all()
@@ -32,7 +32,7 @@ class PasiveView(ListView):
 		devise = 'Dispositivos Pasivos'
 		context = {
 			'resistors_c':resistors_c,
-			'resistors_t':resistors_t,
+			'resistors_t':resistors_,
 			'resistors_potenciometer':resistors_potenciometer,
 			'resistors_trimmer': resistors_trimmer,	
 			'capacitors':capacitors,
