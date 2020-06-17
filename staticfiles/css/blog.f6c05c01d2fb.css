@@ -26,12 +26,6 @@ h5, h4 {
     font-weight: normal;
 }
 
-
-h6 {
-    margin-block-start: 0.4em;
-    margin-block-end: 0.4em;
-}
-
 #content {
     float: left;
     width: 60%;
