@@ -19,33 +19,37 @@
 <article id="tab1">
 
     <ul class="navp-sub"> 
-      <li><a href="#stab1" id="resistor"> Metalicas </a></li>
-      <li><a href="#stab2"> Potencia </a></li>
+      <li><a href="#stab1" id="resistor"> Pelicula de metal </a></li>
+      <li><a href="#stab2"> Carbon </a></li>
       <li><a href="#stab3"> Potenciometros </a></li>
       <li><a href="#stab4"> Trimmers </a></li>
     </ul>
 
 <div class="infos">
   <article id="stab1">
-      {% for resistor_m in resistors_m %}
+    
+      {% for resistor in resistors_m %}
       	<h2>
-            <a href="{% url "blog:details" resistor_m.slug %}">{{ resistor_m.slug }}</a>
-        </h2>
+            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }}</a>
+        </h2>        
+        <img style="width: 30%; object-fit: cover; margin-top: 8px;" src="{{ resistor.image.url }}" alt="{{ resistor.title }}">
         <p class="date">
-          {{ resistor_m.title|truncatewords_html:30  }}
+          {{ resistor.description|markdown }}
         </p>
       {% endfor%}
+
   </article>
 
   <article id="stab2">
-    {% for resistor_p  in resistors_p %}
-      <h2>
-          <a href="{% url "blog:details" resistor_p.slug %}">{{ resistor_p.slug }}</a>
-      </h2>
-      <p class="date">
-        {{ resistor_p.title|truncatewords_html:30  }}
-      </p>
-    {% endfor%}
+    {% for resistor in resistors_m %}
+        <h2>
+            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }}</a>
+        </h2>        
+        <img style="width: 30%; object-fit: cover; margin-top: 8px;" src="{{ resistor.image.url }}" alt="{{ resistor.title }}">
+        <p class="date">
+<!--           {{ resistor.description|markdown }}
+ -->        </p>
+      {% endfor%}
 </article>
 
 <article id="stab3">

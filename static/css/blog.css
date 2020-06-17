@@ -38,11 +38,17 @@ h5 {
     padding: 10px;
     background: #efefef;
     height: 100%;
-    text-align: center;
+    text-align:inherit;
+
 }
 
 .sidebar_color {
     color: #12c064;
+}
+
+.sidebar-info-r"{
+    text-align:left;
+
 }
 
 p.date {
