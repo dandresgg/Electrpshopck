@@ -103,23 +103,23 @@
 {% block sidebar %}
 <div class="sidebar-info-r">
   <article id="side-tab1">
-      {% for resistor_general in resistors_general %}
+      {% for resistor in resistors_general %}
 
         <h2>
-            <a href="{% url "blog:details" resistor_general.slug %}">{{ resistor_general.title }}</a>
+            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }}</a>
         </h2>
 
-        <p>
-          {{ resistor_general.description|truncatewords_html:30  }}
-        </p>
-
-        
-
-            <img style="width: 100%; object-fit: cover;" src="{{ resistor_general.image.url }}" alt="{{ component.title }}">
+        <img style="width: 100%; object-fit: cover; margin-top: 16px;" src="{{ resistor.image.url }}" alt="{{ component.title }}">
 
         <p>
-          {{ resistor_general.features|markdown  }}
-        </p>
+          {{ resistor.description|truncatewords_html:30  }}
+        </p>  
+
+        <h3>Características<h3>
+
+        <p>
+          {{ resistor.features|markdown }}
+        </p> 
 
       {% endfor%}
   </article>

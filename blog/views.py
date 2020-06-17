@@ -26,7 +26,7 @@ class PasiveView(ListView):
 		resistors_p = Resistors.objects.filter(division__contains='power')
 		resistors_potenciometer = Resistors.objects.filter(division__contains='potenciomenter')
 		resistors_trimmer = Resistors.objects.filter(division__contains='acuracy')
-		resistors_general = Resistors.objects.filter(division__contains='smd')
+		resistors_general = Resistors.objects.filter(division__contains='general')
 		capacitors = Capacitors.objects.all()
 		diodes = Diodes.objects.all()
 		devise = 'Dispositivos Pasivos'
