@@ -44,7 +44,7 @@ class Resistors(models.Model):
 			('power','Power'),
 			('potenciometer', 'Potenciometer'),
 			('smd','SMD'),
-			('acuraty', 'acuraty')
+			('accuracy', 'Accuracy')
 		)
 
 	STATUS_CHOISES = (
