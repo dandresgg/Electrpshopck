@@ -32,7 +32,7 @@ class PasiveView(ListView):
 		devise = 'Dispositivos Pasivos'
 		context = {
 			'resistors_c':resistors_c,
-			'resistors_t':resistors_,
+			'resistors_t':resistors_t,
 			'resistors_potenciometer':resistors_potenciometer,
 			'resistors_trimmer': resistors_trimmer,	
 			'capacitors':capacitors,
