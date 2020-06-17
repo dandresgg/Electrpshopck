@@ -1,8 +1,9 @@
   	{% load blog_tags %}
   	<h2>
         <a href="{% url "blog:details" component.slug %}">{{ component.title }}</a>
+        <h6 class="date"> Click en título para más información</h6>
     </h2>        
-    <img style="width: 30%; object-fit: cover; margin-top: 8px;" src="{{ component.image.url }}" alt="{{ component.title }}">
+    <img style="width:200px; height: 150px; object-fit: cover; margin-top: 8px;" src="{{ component.image.url }}" alt="{{ component.title }}">
     <p class="date">
-      {{ component.description|markdown }}
+      {{ component.description|markdown|truncatewords_html:100 }}
     </p>
