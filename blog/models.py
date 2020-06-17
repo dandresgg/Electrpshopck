@@ -39,7 +39,7 @@ class Resistors(models.Model):
 	''' resistors '''
 	SUBCOMPONENT = (
 			('general', 'General'),
-			('metal_film', 'Metal_Film'),
+			('termistor', 'Termistor'),
 			('carbon', 'Carbon'),
 			('power','Power'),
 			('potenciometer', 'Potenciometer'),

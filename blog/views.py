@@ -22,8 +22,8 @@ class PasiveView(ListView):
 	sucucces_url = reverse_lazy('blog:pasive')
 
 	def get_context_data(self, *args, **kwargs):
-		resistors_m = Resistors.objects.filter(division__contains='metal_film')
-		resistors_p = Resistors.objects.filter(division__contains='power')
+		resistors_c = Resistors.objects.filter(division__contains='carbon')
+		resistors_t = Resistors.objects.filter(division__contains='termistor')
 		resistors_potenciometer = Resistors.objects.filter(division__contains='potenciomenter')
 		resistors_trimmer = Resistors.objects.filter(division__contains='acuracy')
 		resistors_general = Resistors.objects.filter(division__contains='general')
@@ -31,8 +31,8 @@ class PasiveView(ListView):
 		diodes = Diodes.objects.all()
 		devise = 'Dispositivos Pasivos'
 		context = {
-			'resistors_m':resistors_m,
-			'resistors_p':resistors_p,
+			'resistors_c':resistors_c,
+			'resistors_t':resistors_t,
 			'resistors_potenciometer':resistors_potenciometer,
 			'resistors_trimmer': resistors_trimmer,	
 			'capacitors':capacitors,

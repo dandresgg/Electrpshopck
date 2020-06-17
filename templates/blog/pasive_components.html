@@ -19,58 +19,34 @@
 <article id="tab1">
 
     <ul class="navp-sub"> 
-      <li><a href="#stab1" id="resistor"> Pelicula de metal </a></li>
-      <li><a href="#stab2"> Carbon </a></li>
-      <li><a href="#stab3"> Potenciometros </a></li>
-      <li><a href="#stab4"> Trimmers </a></li>
+      <li><a href="#stab1" id="resistor"> Pelicula de carbono </a></li>
+      <li><a href="#stab2"> Potenciometros </a></li>
+      <li><a href="#stab3"> Trimmers </a></li>
+      <li><a href="#stab4"> Termistores </a></li>
     </ul>
 
 <div class="infos">
-  <article id="stab1">
-    
-      {% for resistor in resistors_m %}
-      	<h2>
-            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }}</a>
-        </h2>        
-        <img style="width: 30%; object-fit: cover; margin-top: 8px;" src="{{ resistor.image.url }}" alt="{{ resistor.title }}">
-        <p class="date">
-          {{ resistor.description|markdown }}
-        </p>
+  <article id="stab1">    
+      {% for component in resistors_c %}
+      	{% include "component/component_mainpage.html" %}
       {% endfor%}
-
   </article>
 
   <article id="stab2">
-    {% for resistor in resistors_m %}
-        <h2>
-            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }}</a>
-        </h2>        
-        <img style="width: 30%; object-fit: cover; margin-top: 8px;" src="{{ resistor.image.url }}" alt="{{ resistor.title }}">
-        <p class="date">
-<!--           {{ resistor.description|markdown }}
- -->        </p>
-      {% endfor%}
+    {% for component in resistors_potenciometer %}
+     {% include "component/component_mainpage.html" %}
+    {% endfor%}
 </article>
 
 <article id="stab3">
-    {% for resistor_potenciometer in resistors_potenciometer %}
-      <h2>
-          <a href="{% url "blog:details" resistor_potenciometer.slug %}">{{ resistor_potenciometer.slug }}</a>
-      </h2>
-      <p class="date">
-        {{ resistor_potenciometer.title|truncatewords_html:30  }}
-      </p>
+    {% for component in resistors_trimmer %}
+      {% include "component/component_mainpage.html" %}
     {% endfor%}
 </article>
 
 <article id="stab4">
-    {% for resistor_trimmer in resistors_trimmer %}
-      <h2>
-          <a href="{% url "blog:details" resistor_trimmer.slug %}">{{ resistor_trimmer.slug }}</a>
-      </h2>
-      <p class="date">
-        {{ resistor_trimmer.title|truncatewords_html:30  }}
-      </p>
+    {% for component in resistors_t %}
+     {% include "component/component_mainpage.html" %}
     {% endfor%}
 </article>
 </div>
@@ -116,9 +92,7 @@
           <h4>{{ resistor.description|markdown|truncatewords_html:30 }}</h4>
         </p>  
 
-        <h3>Simbolos</h3>
-
-        <img style="width: 100%; object-fit: cover; margin-top: 16px;" src="{{ resistor.image_1.url }}" alt="{{ component.title }}">
+        <img style="width: 100%; object-fit: cover;" src="{{ resistor.image_1.url }}" alt="{{ component.title }}">
 
       {% endfor%}
   </article>
