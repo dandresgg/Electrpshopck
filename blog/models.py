@@ -38,7 +38,9 @@ class Post(models.Model):
 class Resistors(models.Model):
 	''' resistors '''
 	SUBCOMPONENT = (
+			('general', 'General'),
 			('metal_film', 'Metal_Film'),
+			('carbon', 'Carbon'),
 			('power','Power'),
 			('potenciometer', 'Potenciometer'),
 			('smd','SMD'),
@@ -61,6 +63,11 @@ class Resistors(models.Model):
 	aplications = models.TextField(max_length=1500, blank=True)
 
 	image	= models.ImageField(upload_to='blog/img', blank=True)
+	image_1	= models.ImageField(upload_to='blog/img', blank=True)
+	image_2	= models.ImageField(upload_to='blog/img', blank=True)
+	image_3	= models.ImageField(upload_to='blog/img', blank=True)
+	image_4	= models.ImageField(upload_to='blog/img', blank=True)
+
 	publish	= models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add =True)
 	modified = models.DateTimeField(auto_now=True)
@@ -83,6 +90,7 @@ class Resistors(models.Model):
 class Capacitors(models.Model):
 	''' resistors '''
 	SUBCOMPONENT = (
+			('general', 'General'),
 			('ceramic', 'Ceramic'),
 			('electrolitic','Electrolitic'),
 			('variable', 'Variable'),
@@ -106,6 +114,11 @@ class Capacitors(models.Model):
 	aplications = models.TextField(max_length=1500, blank=True)
 
 	image	= models.ImageField(upload_to='blog/img', blank=True)
+	image_1	= models.ImageField(upload_to='blog/img', blank=True)
+	image_2	= models.ImageField(upload_to='blog/img', blank=True)
+	image_3	= models.ImageField(upload_to='blog/img', blank=True)
+	image_4	= models.ImageField(upload_to='blog/img', blank=True)
+
 	publish	= models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add =True)
 	modified = models.DateTimeField(auto_now=True)
@@ -128,6 +141,7 @@ class Capacitors(models.Model):
 class Diodes(models.Model):
 	''' resistors '''
 	SUBCOMPONENT = (
+			('general', 'General'),
 			('l.e.d', 'L.E.D'),
 			('rectifier','Rectifier'),
 			('zener', 'Zener'),
@@ -149,6 +163,11 @@ class Diodes(models.Model):
 	aplications = models.TextField(max_length=1500, blank=True)
 
 	image	= models.ImageField(upload_to='blog/img', blank=True)
+	image_1	= models.ImageField(upload_to='blog/img', blank=True)
+	image_2	= models.ImageField(upload_to='blog/img', blank=True)
+	image_3	= models.ImageField(upload_to='blog/img', blank=True)
+	image_4	= models.ImageField(upload_to='blog/img', blank=True)
+
 	publish	= models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add =True)
 	modified = models.DateTimeField(auto_now=True)
@@ -172,6 +191,7 @@ class Diodes(models.Model):
 class Transistors(models.Model):
 	''' resistors '''
 	SUBCOMPONENT = (
+			('general', 'General'),
 			('bjt_npn', 'BJT_NPN'),
 			('btt_pnp','BJT_PNP'),
 		)
@@ -191,6 +211,11 @@ class Transistors(models.Model):
 	aplications = models.TextField(max_length=1500, blank=True)
 
 	image	= models.ImageField(upload_to='blog/img', blank=True)
+	image_1	= models.ImageField(upload_to='blog/img', blank=True)
+	image_2	= models.ImageField(upload_to='blog/img', blank=True)
+	image_3	= models.ImageField(upload_to='blog/img', blank=True)
+	image_4	= models.ImageField(upload_to='blog/img', blank=True)
+
 	publish	= models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add =True)
 	modified = models.DateTimeField(auto_now=True)
