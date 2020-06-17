@@ -58,18 +58,56 @@
     <ul class="navp-sub"> 
       <li><a href="#sab1"> Ceramico </a></li>
       <li><a href="#stab2"> Electrolitico </a></li>
-      <li><a href="#stab3"> Tantalio </a></li>
-      <li><a href="#stab4"> Poliester </a></li>
+      <li><a href="#stab3"> Poliester </a></li>
     </ul>
 
-  {% for capacitor in capacitors %}
-    <h2>
-        <a href="{% url "blog:details" capacitor.slug %}">{{ capacitor.slug }}</a>
-    </h2>
-    <p class="date">
-      {{ capacitor.title|truncatewords_html:30  }}
-    </p>
+<article id="stab1">    
+  {% for component in capacitors_c %}
+    {% include "component/component_mainpage.html" %}
   {% endfor%}
+</article>
+
+<article id="stab2">
+  {% for component in capacitors_e %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
+<article id="stab3">
+  {% for component in capacitors_p %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
+</article>
+
+
+<article id="tab3">
+
+    <ul class="navp-sub"> 
+      <li><a href="#sab1"> Rectificador </a></li>
+      <li><a href="#stab2"> Zener </a></li>
+      <li><a href="#stab3"> L.E.D </a></li>
+    </ul>
+
+<article id="stab1">    
+  {% for component in diodes_r %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
+<article id="stab2">
+  {% for component in diodes_z %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
+<article id="stab3">
+  {% for component in diodes_led %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
 </article>
 
 </div>
@@ -77,30 +115,24 @@
 {% endblock %}
 
 {% block sidebar %}
-<div class="sidebar-info-r">
-  <article id="side-tab1">
-      {% for resistor in resistors_general %}
-
-        <h2>
-            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }} </a>
-             <a href="{% url "blog:details" resistor.slug %} style="margin-top: inherit;" "><h6 class="date">Haz click para saber mas de {{ resistor.title }}</h6></a>
-        </h2>
-
-        <img style="width: 100%; object-fit: cover; margin-top: 16px;" src="{{ resistor.image.url }}" alt="{{ component.title }}">
-
-        <p>
-          <h4>{{ resistor.description|markdown|truncatewords_html:30 }}</h4>
-        </p>  
-
-        <img style="width: 100%; object-fit: cover;" src="{{ resistor.image_1.url }}" alt="{{ component.title }}">
-
+<div class="sidebar-info">
+  <div class="side-infor">
+      {% for component in resistors_general %}
+        {% include "component/general_component_main.html" %}
       {% endfor%}
-  </article>
-</div>
+  </div>
 
-<div class="sidebar-info-c">
-  <article>
-  ss
-  </article>
+  <div class="side-infoc">
+     {% for component in capacitors_g %}
+        {% include "component/general_component_main.html" %}
+      {% endfor%}
+  </div>
+
+  <div class="side-infod">
+     {% for component in diodes_g %}
+        {% include "component/general_component_main.html" %}
+      {% endfor%}
+  </div>
+
 </div>
 {% endblock %}

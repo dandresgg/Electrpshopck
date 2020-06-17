@@ -22,22 +22,42 @@ class PasiveView(ListView):
 	sucucces_url = reverse_lazy('blog:pasive')
 
 	def get_context_data(self, *args, **kwargs):
+		#Resistors
 		resistors_c = Resistors.objects.filter(division__contains='carbon')
 		resistors_t = Resistors.objects.filter(division__contains='termistor')
 		resistors_potenciometer = Resistors.objects.filter(division__contains='potenciometer')
 		resistors_trimmer = Resistors.objects.filter(division__contains='accuracy')
 		resistors_general = Resistors.objects.filter(division__contains='general')
-		capacitors = Capacitors.objects.all()
-		diodes = Diodes.objects.all()
+		#Capacitors
+		capacitors_g = Capacitors.objects.filter(division__contains='general')
+		capacitors_c = Capacitors.objects.filter(division__contains='ceramic')
+		capacitors_e = Capacitors.objects.filter(division__contains='electrolitic')
+		capacitors_p = Capacitors.objects.filter(division__contains='polyester')
+		#Diodes
+		diodes_g 	= Diodes.objects.filter(division__contains='general')
+		diodes_r 	= Diodes.objects.filter(division__contains='rectifier')
+		diodes_z	= Diodes.objects.filter(division__contains='zener')  
+		diodes_led	= Diodes.objects.filter(division__contains='l.e.d')
+
 		devise = 'Dispositivos Pasivos'
 		context = {
+			#resistors context
+			'resistors_general':resistors_general,
 			'resistors_c':resistors_c,
 			'resistors_t':resistors_t,
 			'resistors_potenciometer':resistors_potenciometer,
 			'resistors_trimmer': resistors_trimmer,	
-			'capacitors':capacitors,
-			'resistors_general':resistors_general,
-			'diodes':diodes,
+			#Capacitors context
+			'capacitors_g':capacitors_g,
+			'capacitors_c':capacitors_c,
+			'capacitors_e':capacitors_e,
+			'capacitors_p':capacitors_p,
+			#Diodes context
+			'diodes_g':diodes_g,
+			'diodes_r':diodes_g,
+			'diodes_z':diodes_z,
+			'diodes_led':diodes_led,
+
 			'devise':devise,
 		}
 		return context

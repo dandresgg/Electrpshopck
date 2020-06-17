@@ -25,8 +25,8 @@
         $('ul.navp li a:first').addClass('active-panel');
         $('.info article').hide();
         $('.info article:first').show();
-        $('.sidebar-info-r article:first').show();
-        $('.sidebar-info-c article:first').hide();
+        $('.sidebar-info .side-infor').show();
+        $('.sidebar-info .side-infoc').hide();
 
 
 
@@ -39,13 +39,23 @@
             var activeTab = $(this).attr('href');
             console.log(activeTab);
             $(activeTab).show();
-            if(activeTab == "#tab1"){
-            	$('.sidebar-info-r article:first').show();
-            	$('.infos article:first').show();
-            }else{
-            	$('.sidebar-info-r article').hide();
+                if(activeTab == "#tab1"){
+                	$('.sidebar-info .side-infor').show();
+                    $('.sidebar-info .side-infoc').hide();
+                	$('.infos article:first').show();
+                }else{
+                	$('.sidebar-info .side-infor').hide();
 
-            }
+                }
+
+                if(activeTab == "#tab2"){
+                    $('.sidebar-info .side-infoc').show();
+                    $('.sidebar-info .side-infor').hide();
+                }else{
+                    $('.sidebar-info .side-infoc').hide();
+
+                }
+
             return false;
         });
 

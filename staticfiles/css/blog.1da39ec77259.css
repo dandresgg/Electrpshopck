@@ -226,8 +226,8 @@ input[type="submit"] {
 }
 
 .center-image {
-    width: 200px; 
-    height: 200px; 
+    width: 180px; 
+    height: 180px; 
     object-fit: cover; 
     margin-top: 8px;
     margin-left: auto;
