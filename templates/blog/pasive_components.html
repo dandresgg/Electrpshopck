@@ -106,7 +106,8 @@
       {% for resistor in resistors_general %}
 
         <h2>
-            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }}</a>
+            <a href="{% url "blog:details" resistor.slug %}">{{ resistor.title }} </a>
+            <p class="date"> Haz click para saber mas de {{ resistor.title }}</p>
         </h2>
 
         <img style="width: 100%; object-fit: cover; margin-top: 16px;" src="{{ resistor.image.url }}" alt="{{ component.title }}">
@@ -115,11 +116,9 @@
           <h4>{{ resistor.description|markdown|truncatewords_html:30 }}</h4>
         </p>  
 
-        <h3>Características</h3>
+        <h3>Simbolos</h3>
 
-        <p>
-          <h4>{{ resistor.features|markdown }}</h4>
-        </p> 
+        <img style="width: 100%; object-fit: cover; margin-top: 16px;" src="{{ resistor.image_1.url }}" alt="{{ component.title }}">
 
       {% endfor%}
   </article>
