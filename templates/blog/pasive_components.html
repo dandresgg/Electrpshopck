@@ -112,7 +112,7 @@
         <img style="width: 100%; object-fit: cover; margin-top: 16px;" src="{{ resistor.image.url }}" alt="{{ component.title }}">
 
         <p>
-          {{ resistor.description|truncatewords_html:30  }}
+          {{ resistor.description|markdown|truncatewords_html:30  }}
         </p>  
 
         <h3>Características</h3>
