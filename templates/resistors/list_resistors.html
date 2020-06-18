@@ -1,0 +1,34 @@
+  
+
+  <ul class="navp-sub"> 
+      <li><a href="#rtab1"> Pelicula de carbono </a></li>
+      <li><a href="#rtab2"> Potenciometros </a></li>
+      <li><a href="#rtab3"> Trimmers </a></li>
+      <li><a href="#rtab4"> Termistores </a></li>
+    </ul>
+
+  <div class="infos">
+    <article id="rtab1">    
+        {% for component in resistors_c %}
+        	{% include "component/component_mainpage.html" %}
+        {% endfor%}
+    </article>
+
+    <article id="rtab2">
+      {% for component in resistors_potenciometer %}
+       {% include "component/component_mainpage.html" %}
+      {% endfor%}
+  </article>
+
+  <article id="rtab3">
+      {% for component in resistors_trimmer %}
+        {% include "component/component_mainpage.html" %}
+      {% endfor%}
+  </article>
+
+  <article id="rtab4">
+      {% for component in resistors_t %}
+       {% include "component/component_mainpage.html" %}
+      {% endfor%}
+  </article>
+  </div>

@@ -6,113 +6,28 @@
 {% endblock %}
 
 {% block content %}
-
 <ul class="navp">	
 	<li><a href="#tab1"> Resistencias </a></li>
  	<li><a href="#tab2"> Capacitores </a></li>
  	<li><a href="#tab3"> Diodos </a></li>
 </ul>
 
+<div class="info">	
+    <article id="tab1">
+      {% include "resistors/list_resistors.html" %}
+    </article>
 
-<div class="info">
-	
-<article id="tab1">
+    <article id="tab2">
+       {% include "capacitors/list_capacitors.html" %}
+    </article>
 
-    <ul class="navp-sub"> 
-      <li><a href="#stab1" id="resistor"> Pelicula de carbono </a></li>
-      <li><a href="#stab2"> Potenciometros </a></li>
-      <li><a href="#stab3"> Trimmers </a></li>
-      <li><a href="#stab4"> Termistores </a></li>
-    </ul>
-
-<div class="infos">
-  <article id="stab1">    
-      {% for component in resistors_c %}
-      	{% include "component/component_mainpage.html" %}
-      {% endfor%}
-  </article>
-
-  <article id="stab2">
-    {% for component in resistors_potenciometer %}
-     {% include "component/component_mainpage.html" %}
-    {% endfor%}
-</article>
-
-<article id="stab3">
-    {% for component in resistors_trimmer %}
-      {% include "component/component_mainpage.html" %}
-    {% endfor%}
-</article>
-
-<article id="stab4">
-    {% for component in resistors_t %}
-     {% include "component/component_mainpage.html" %}
-    {% endfor%}
-</article>
+    <article id="tab3">
+      {% include "diodes/list_diodes.html" %}
+    </article>
 </div>
-
-</article>
-
-<article id="tab2">
-
-    <ul class="navp-sub"> 
-      <li><a href="#sab1"> Ceramico </a></li>
-      <li><a href="#stab2"> Electrolitico </a></li>
-      <li><a href="#stab3"> Poliester </a></li>
-    </ul>
-
-<article id="stab1">    
-  {% for component in capacitors_c %}
-    {% include "component/component_mainpage.html" %}
-  {% endfor%}
-</article>
-
-<article id="stab2">
-  {% for component in capacitors_e %}
-    {% include "component/component_mainpage.html" %}
-  {% endfor%}
-</article>
-
-<article id="stab3">
-  {% for component in capacitors_p %}
-    {% include "component/component_mainpage.html" %}
-  {% endfor%}
-</article>
-
-</article>
-
-
-<article id="tab3">
-
-    <ul class="navp-sub"> 
-      <li><a href="#sab1"> Rectificador </a></li>
-      <li><a href="#stab2"> Zener </a></li>
-      <li><a href="#stab3"> L.E.D </a></li>
-    </ul>
-
-<article id="stab1">    
-  {% for component in diodes_r %}
-    {% include "component/component_mainpage.html" %}
-  {% endfor%}
-</article>
-
-<article id="stab2">
-  {% for component in diodes_z %}
-    {% include "component/component_mainpage.html" %}
-  {% endfor%}
-</article>
-
-<article id="stab3">
-  {% for component in diodes_led %}
-    {% include "component/component_mainpage.html" %}
-  {% endfor%}
-</article>
-
-</article>
-
-</div>
-
 {% endblock %}
+
+
 
 {% block sidebar %}
 <div class="sidebar-info">
@@ -133,6 +48,5 @@
         {% include "component/general_component_main.html" %}
       {% endfor%}
   </div>
-
 </div>
 {% endblock %}

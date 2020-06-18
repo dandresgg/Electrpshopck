@@ -1,0 +1,24 @@
+ 
+    <ul class="navp-sub"> 
+      <li><a href="#dab1"> Rectificador </a></li>
+      <li><a href="#dtab2"> Zener </a></li>
+      <li><a href="#dtab3"> L.E.D </a></li>
+    </ul>
+
+<article id="dtab1">    
+  {% for component in diodes_r %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
+<article id="dtab2">
+  {% for component in diodes_z %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>
+
+<article id="dtab3">
+  {% for component in diodes_led %}
+    {% include "component/component_mainpage.html" %}
+  {% endfor%}
+</article>

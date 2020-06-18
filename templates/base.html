@@ -42,6 +42,7 @@
                 if(activeTab == "#tab1"){
                 	$('.sidebar-info .side-infor').show();
                     $('.sidebar-info .side-infoc').hide();
+                    $('.sidebar-info .side-infod').hide();
                 	$('.infos article:first').show();
                 }else{
                 	$('.sidebar-info .side-infor').hide();
@@ -51,8 +52,20 @@
                 if(activeTab == "#tab2"){
                     $('.sidebar-info .side-infoc').show();
                     $('.sidebar-info .side-infor').hide();
+                    $('.sidebar-info .side-infod').hide();
+                    $('.infos article#ctab1').show();
                 }else{
                     $('.sidebar-info .side-infoc').hide();
+
+                }
+
+                 if(activeTab == "#tab3"){
+                    $('.sidebar-info .side-infod').show();
+                    $('.sidebar-info .side-infor').hide();
+                    $('.sidebar-info .side-infoc').hide();
+                    $('.infos article#dtab1').show();
+                }else{
+                    $('.sidebar-info .side-infod').hide();
 
                 }
 
@@ -70,7 +83,7 @@
             $('.infos article').hide();            
 
             var activeTab2 = $(this).attr('href');
-            console.log(activeTab2);            
+            console.log(activeTab2);                         
             $(activeTab2).show();
             return false;
         });
