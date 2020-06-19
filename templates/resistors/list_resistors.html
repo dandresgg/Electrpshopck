@@ -1,6 +1,7 @@
   
 
   <ul class="navp-sub"> 
+      <li><a href="#rtab0"> General </a></li>
       <li><a href="#rtab1"> Pelicula de carbono </a></li>
       <li><a href="#rtab2"> Potenciometros </a></li>
       <li><a href="#rtab3"> Trimmers </a></li>
@@ -8,6 +9,12 @@
     </ul>
 
   <div class="infos">
+     <article id="rtab0">    
+        {% for component in resistors_general %}
+          {% include "component/component_mainpage.html" %}
+        {% endfor%}
+    </article>
+
     <article id="rtab1">    
         {% for component in resistors_c %}
         	{% include "component/component_mainpage.html" %}

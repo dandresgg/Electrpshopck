@@ -1,12 +1,19 @@
  
 
  <ul class="navp-sub"> 
+      <li><a href="#ctab0"> General </a></li>
       <li><a href="#ctab1"> Ceramico </a></li>
       <li><a href="#ctab2"> Electrolitico </a></li>
       <li><a href="#ctab3"> Poliester </a></li>
     </ul>
 
   <div class="infos">
+
+    <article id="ctab0">    
+      {% for component in capacitors_g %}
+        {% include "component/component_mainpage.html" %}
+      {% endfor %}
+    </article>
 
     <article id="ctab1">    
       {% for component in capacitors_c %}
