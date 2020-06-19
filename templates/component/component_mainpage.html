@@ -1,8 +1,7 @@
   	{% load blog_tags %}
-  	<h2>
-        <a href="{% url "blog:details" component.slug %}">{{ component.title }}</a>
-        <h6 class="date"> Click en título para más información</h6>
-    </h2>        
+  	<h1>
+      {{ component.title }}
+    </h1>        
     <img class="center-image" src="{{ component.image.url }}" alt="{{ component.title }}">
     <p class="date">
       {{ component.description|markdown }}
