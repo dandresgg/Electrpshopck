@@ -38,6 +38,7 @@ class PasiveView(ListView):
 		diodes_r 	= Diodes.objects.filter(division__contains='rectifier') 
 		diodes_z	= Diodes.objects.filter(division__contains='zener')  
 		diodes_led	= Diodes.objects.filter(division__contains='l.e.d')
+		diodes_schottky	= Diodes.objects.filter(division__contains='smd')
 
 		devise = 'Dispositivos Pasivos'
 		context = {
@@ -57,6 +58,7 @@ class PasiveView(ListView):
 			'diodes_r':diodes_r,
 			'diodes_z':diodes_z,
 			'diodes_led':diodes_led,
+			'diodes_schottky': diodes_schottky,
 
 			'devise':devise,
 		}

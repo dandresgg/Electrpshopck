@@ -4,6 +4,7 @@
       <li><a href="#dtab1"> Rectificador </a></li>
       <li><a href="#dtab2"> Zener </a></li>
       <li><a href="#dtab3"> L.E.D </a></li>
+      <li><a href="#dtab4"> Schottky </a></li>
     </ul>
 
 <div class="infos">
@@ -28,6 +29,12 @@
 
   <article id="dtab3">
     {% for component in diodes_led %}
+      {% include "component/component_mainpage.html" %}
+    {% endfor%}
+  </article>
+
+    <article id="dtab4">
+    {% for component in diodes_schottky %}
       {% include "component/component_mainpage.html" %}
     {% endfor%}
   </article>
