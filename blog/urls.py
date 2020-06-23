@@ -19,6 +19,6 @@ urlpatterns =[
 		name = 'active'),
 
 	path(route = 'blog/<slug>/',
-		view = views.CapacitorsDetailView.as_view(),
+		view = views.DiodesDetailView.as_view(),
 		name = 'details'),
 ]

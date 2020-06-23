@@ -145,8 +145,9 @@ class Diodes(models.Model):
 			('l.e.d', 'L.E.D'),
 			('rectifier','Rectifier'),
 			('zener', 'Zener'),
-			('smd','SMD'),
-		)
+			('shottky','Shottky'),
+			('device','Device'),
+			)
 
 	STATUS_CHOISES = (
 			('draft', 'Daft'),

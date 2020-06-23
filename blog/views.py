@@ -38,7 +38,8 @@ class PasiveView(ListView):
 		diodes_r 	= Diodes.objects.filter(division__contains='rectifier') 
 		diodes_z	= Diodes.objects.filter(division__contains='zener')  
 		diodes_led	= Diodes.objects.filter(division__contains='l.e.d')
-		diodes_schottky	= Diodes.objects.filter(division__contains='smd')
+		diodes_schottky	= Diodes.objects.filter(division__contains='shottky')
+		diodes_d	= Diodes.objects.filter(division__contains='device')
 
 		devise = 'Dispositivos Pasivos'
 		context = {
@@ -59,7 +60,7 @@ class PasiveView(ListView):
 			'diodes_z':diodes_z,
 			'diodes_led':diodes_led,
 			'diodes_schottky': diodes_schottky,
-
+			'diodes_d': diodes_d,
 			'devise':devise,
 		}
 		return context
@@ -82,13 +83,13 @@ class ActiveView(ListView):
 		return context
 
 
-class CapacitorsDetailView(DetailView):
+class DiodesDetailView(DetailView):
 	'''Componet's details'''
 	template_name = 'blog/component_detail.html'
 	slug_field = 'slug'
 	slug_url_kwarg = 'slug'
-	queryset = Capacitors.objects.all()
-	context_object_name = 'component'
+	queryset = Diodes.objects.all()
+	# context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details')
 
 

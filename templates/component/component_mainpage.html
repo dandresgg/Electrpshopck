@@ -6,3 +6,8 @@
     <p class="date">
       {{ component.description|markdown }}
     </p>
+
+    {% if component.datasheet %}
+    	<hi>Datasheet</hi>
+    	<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
+    {% endif %}

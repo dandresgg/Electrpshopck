@@ -30,23 +30,28 @@
 
 
 {% block sidebar %}
-<!-- <div class="sidebar-info">
+
+<h2>
+  Buscar _____
+</h2>
+<div class="sidebar-info">
   <div class="side-infor">
-      {% for component in resistors_general %}
+    <!--   {% for component in resistors_general %}
         {% include "component/general_component_main.html" %}
-      {% endfor%}
+      {% endfor%} -->
   </div>
 
   <div class="side-infoc">
-     {% for component in capacitors_g %}
+    <!--  {% for component in capacitors_g %}
         {% include "component/general_component_main.html" %}
-      {% endfor%}
+      {% endfor%} -->
   </div>
 
   <div class="side-infod">
-     {% for component in diodes_g %}
+    <h3 class="sidebar_color">Elementos relacionados</h3> 
+     {% for component in diodes_d %}
         {% include "component/general_component_main.html" %}
       {% endfor%}
   </div>
-</div> -->
-{% endblock %}
+</div>
+{% endblock %} 
