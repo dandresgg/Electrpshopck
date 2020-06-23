@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load blog_tags %}
 
 {% block title %}
 	{{ component.title }}
@@ -6,11 +7,11 @@
 
 {% block content %}
 	<h3> Descripción </h3>
-	<h5>{{ component.description}}</h5>
+	<h5>{{ component.description|markdown}}</h5>
 	<h3>Caracteristicas</h3>
-	<h5>{{ component.features }}</h5>
+	<h5>{{ component.features|markdown }}</h5>
 	<h3>Aplicaciones</h3>
-	<h5>{{ component.aplications }}</h5>
+	<h5>{{ component.aplications|markdown }}</h5>
 	
 
 {% endblock %}
@@ -18,7 +19,7 @@
 {% block sidebar %}
 		<h3 class="sidebar_color">Informacion complementaria</h3>
 		<p>
-		<img class="image-center" src="{{ component.image.url }}" alt="{{ component.title }}">
+		<img class="center-image-2" src="{{ component.image.url }}" alt="{{ component.title }}">
 		<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
 
 {% endblock %}
