@@ -88,8 +88,8 @@ class DiodesDetailView(DetailView):
 	template_name = 'blog/component_detail.html'
 	slug_field = 'slug'
 	slug_url_kwarg = 'slug'
-	queryset = Diodes.objects.all()
-	# context_object_name = 'component'
+	queryset = Diodes.objects.filter(division__contains='device')
+	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details')
 
 
