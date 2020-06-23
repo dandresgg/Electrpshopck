@@ -19,7 +19,12 @@
 {% block sidebar %}
 		<h3 class="sidebar_color">Informacion complementaria</h3>
 		<p>
-		<img class="center-image-2" src="{{ component.image.url }}" alt="{{ component.title }}">
+		<img class="center-image-3" src="{{ component.image.url }}" alt="{{ component.title }}">
+
+		<h3 class="sidebar_color">Componentes similares</h3>
+		<h5> {{ component.similar_components }}</h5>
+
+
 		<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
 
 {% endblock %}
