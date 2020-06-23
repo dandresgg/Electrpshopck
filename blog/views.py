@@ -35,7 +35,7 @@ class PasiveView(ListView):
 		capacitors_p = Capacitors.objects.filter(division__contains='polyester')
 		#Diodes
 		diodes_g 	= Diodes.objects.filter(division__contains='general')
-		diodes_r 	= Diodes.objects.filter(division__contains='rectifier')
+		diodes_r 	= Diodes.objects.filter(division__contains='rectifier') 
 		diodes_z	= Diodes.objects.filter(division__contains='zener')  
 		diodes_led	= Diodes.objects.filter(division__contains='l.e.d')
 
@@ -54,7 +54,7 @@ class PasiveView(ListView):
 			'capacitors_p':capacitors_p,
 			#Diodes context
 			'diodes_g':diodes_g,
-			'diodes_r':diodes_g,
+			'diodes_r':diodes_r,
 			'diodes_z':diodes_z,
 			'diodes_led':diodes_led,
 
