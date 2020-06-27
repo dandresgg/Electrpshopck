@@ -3,7 +3,7 @@ from urllib.request import urlopen
 
 sched = BlockingScheduler()
 
-@sched.scheduled_job('interval', minutes=10)
+@sched.scheduled_job('interval', minutes=50)
 def timed_job():
 	urlopen('https://electroshopckblog.herokuapp.com')
 
