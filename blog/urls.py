@@ -10,6 +10,10 @@ urlpatterns =[
 		view = views.PostMainPage.as_view(),
 		name = 'main_page'),	
 
+	path(route ='blog/search/', 
+		view = views.post_search, 
+		name='post_search'),
+
 	path(route = 'blog/pasive/',
 		view = views.PasiveView.as_view(),
 		name = 'pasive'),
@@ -20,5 +24,5 @@ urlpatterns =[
 
 	path(route = 'blog/<slug>/',
 		view = views.DiodesDetailView.as_view(),
-		name = 'details'),
+		name = 'details'),	
 ]

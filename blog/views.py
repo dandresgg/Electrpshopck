@@ -2,6 +2,9 @@
 from django.views.generic import ListView, DetailView
 from django.urls import reverse_lazy
 from .models import Post, Resistors, Capacitors, Diodes, Transistors
+from .forms import SearchForm
+from django.contrib.postgres.search import SearchVector
+from django.shortcuts import render
 
 
 # Create your views here.
@@ -74,14 +77,36 @@ class ActiveView(ListView):
 	sucucces_url = reverse_lazy('blog:active')
 
 	def get_context_data(self, *args, **kwargs):
-		transistors = Transistors.objects.all()
+		transistors_g 	= Transistors.objects.filter(division__contains='general')
+		transistors_bn 	= Transistors.objects.filter(division__contains='bjt_npn') 
+		transistors_bp 	= Transistors.objects.filter(division__contains='bjt_pnp') 
+		transistors_d	= Transistors.objects.filter(division__contains='device') 
 		devise = 'Dispositivos Activos'
 		context = {
-			'transistors':transistors,
-			'devise':devise
+			'transistors_g':transistors_g,
+			'transistors_bn':transistors_bn,
+			'transistors_bp':transistors_bp,
+			'transistors_d':transistors_d,
+			'devise':devise,
 		}
 		return context
 
+def post_search(request):
+    form = SearchForm()
+    query = None
+    results = []
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Post.published.annotate(
+                search=SearchVector('title', 'body'),
+            ).filter(search=query)
+    return render(request,
+                  'blog/search.html',
+                  {'form': form,
+                   'query': query,
+                   'results': results})
 
 class DiodesDetailView(DetailView):
 	'''Componet's details'''
@@ -92,4 +117,20 @@ class DiodesDetailView(DetailView):
 	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details')
 
+# def post_search(request):
+# 	form = SearchForm()
+# 	query = None
+# 	results = []
+# 	if 'query' in request.GET:
+# 		form = SearchForm(request.GET)
+# 		if form.is_valid():
+# 			query = form.cleaned_data['query']
+# 			results = Post.published.annotata(
+# 						search=SearchVector('title','body'),
+# 						).filter(search=query)
+# 	return render(request,
+# 				'blog/search.html',
+# 				{'form':form,
+# 				'query':query,
+# 				'results':results})
 

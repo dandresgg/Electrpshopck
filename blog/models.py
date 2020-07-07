@@ -4,6 +4,10 @@ from django.utils import timezone
 
 # Create your models here.
 
+# Models to blog page.
+class PublishedManager(models.Manager):
+	def get_queryset(self):
+		return super().get_queryset().filter(status='published')
 
 class Post(models.Model):
 	'''Component's information'''
@@ -23,6 +27,9 @@ class Post(models.Model):
 	publish	= models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add =True)
 	modified = models.DateTimeField(auto_now=True)
+
+	objects		= models.Manager() # Default manager
+	published 	= PublishedManager() # A custom manage
 
 	status 	= models.CharField(max_length=10,
 								choices = STATUS_CHOISES,
@@ -194,7 +201,8 @@ class Transistors(models.Model):
 	SUBCOMPONENT = (
 			('general', 'General'),
 			('bjt_npn', 'BJT_NPN'),
-			('btt_pnp','BJT_PNP'),
+			('bjt_pnp','BJT_PNP'),
+			('device','DEVICE'),
 		)
 
 	STATUS_CHOISES = (
