@@ -142,7 +142,7 @@ STATICFILES_FINDERS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'STATIC-BUCKED')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'STATIC')
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
 
