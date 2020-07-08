@@ -113,7 +113,7 @@ def post_search(request):
 	        query = form.cleaned_data['query']
 	        '''results'''
 	        results = Resistors.published.annotate(
-	            search=SearchVector('title', 'body'),
+	            search=SearchVector('title', 'description'),
 	        ).filter(search=query)
     return render(request,
                   'blog/search.html',
