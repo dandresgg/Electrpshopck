@@ -222,7 +222,7 @@ class Transistors(models.Model):
 		)
 
 	title 	= models.CharField(max_length=100)
-	slug 	= models.SlugField(max_length=100) 
+	slug 	= models.SlugField(blank=True) 
 	author  = models.ForeignKey(User, 
 								on_delete=models.CASCADE,
 								related_name='blog_transistor')
