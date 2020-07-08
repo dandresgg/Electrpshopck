@@ -4,8 +4,8 @@
       <li><a href="#rtab0"> General </a></li>
       <li><a href="#rtab1"> Bipolar </a></li>
       <li><a href="#rtab2"> JFET </a></li>
-      <li><a href="#rtab3"> CMOS </a></li>
-      <li><a href="#rtab4"> TRIAC </a></li>
+      <li><a href="#rtab3"> MOSFET </a></li>
+      <li><a href="#rtab4"> Fototransistor </a></li>
     </ul>
 
   <div class="infos">
@@ -16,25 +16,25 @@
     </article>
 
     <article id="rtab1">    
-        {% for component in resistors_c %}
+        {% for component in transistors_b %}
         	{% include "component/component_mainpage.html" %}
         {% endfor%}
     </article>
 
     <article id="rtab2">
-      {% for component in resistors_potenciometer %}
+      {% for component in transistors_j %}
        {% include "component/component_mainpage.html" %}
       {% endfor%}
   </article>
 
   <article id="rtab3">
-      {% for component in resistors_trimmer %}
+      {% for component in transistors_m %}
         {% include "component/component_mainpage.html" %}
       {% endfor%}
   </article>
 
   <article id="rtab4">
-      {% for component in resistors_t %}
+      {% for component in transistors_p %}
        {% include "component/component_mainpage.html" %}
       {% endfor%}
   </article>

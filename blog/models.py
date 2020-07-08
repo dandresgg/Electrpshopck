@@ -208,9 +208,11 @@ class Diodes(models.Model):
 class Transistors(models.Model):
 	''' resistors '''
 	SUBCOMPONENT = (
-			('general', 'General'),
-			('bjt_npn', 'BJT_NPN'),
-			('bjt_pnp','BJT_PNP'),
+			('general', 'GENERAL'),
+			('bipolar', 'BIPOLAR'),
+			('jfet','JFET'),
+			('mosfet','MOSFET'),
+			('fototransistor','FOTOTRANSISTOR'),
 			('device','DEVICE'),
 		)
 

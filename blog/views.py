@@ -78,14 +78,17 @@ class ActiveView(ListView):
 
 	def get_context_data(self, *args, **kwargs):
 		transistors_g 	= Transistors.objects.filter(division__contains='general')
-		transistors_bn 	= Transistors.objects.filter(division__contains='bjt_npn') 
-		transistors_bp 	= Transistors.objects.filter(division__contains='bjt_pnp') 
+		transistors_b 	= Transistors.objects.filter(division__contains='bipolar') 
+		transistors_j 	= Transistors.objects.filter(division__contains='jfet') 
+		transistors_m 	= Transistors.objects.filter(division__contains='mosfet') 
+		transistors_p	= Transistors.objects.filter(division__contains='fototransistor')
 		transistors_d	= Transistors.objects.filter(division__contains='device') 
 		devise = 'Dispositivos Activos'
 		context = {
 			'transistors_g':transistors_g,
-			'transistors_bn':transistors_bn,
-			'transistors_bp':transistors_bp,
+			'transistors_b':transistors_b,
+			'transistors_j':transistors_j,
+			'transistors_m':transistors_m,
 			'transistors_d':transistors_d,
 			'devise':devise,
 		}
