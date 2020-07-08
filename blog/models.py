@@ -87,6 +87,9 @@ class Resistors(models.Model):
 								choices = STATUS_CHOISES,
 								default = 'draft')
 
+	objects		= models.Manager() # Default manager
+	published 	= PublishedManager() # A custom manage
+
 	class Meta:
 		ordering = ('-publish',)
 
@@ -137,6 +140,9 @@ class Capacitors(models.Model):
 	status 	= models.CharField(max_length=10,
 								choices = STATUS_CHOISES,
 								default = 'draft')
+
+	objects		= models.Manager() # Default manager
+	published 	= PublishedManager() # A custom manage
 
 	class Meta:
 		ordering = ('-publish',)
@@ -189,6 +195,9 @@ class Diodes(models.Model):
 								choices = STATUS_CHOISES,
 								default = 'draft')
 
+	objects		= models.Manager() # Default manager
+	published 	= PublishedManager() # A custom manage
+
 	class Meta:
 		ordering = ('-publish',)
 
@@ -237,6 +246,9 @@ class Transistors(models.Model):
 	status 	= models.CharField(max_length=10,
 								choices = STATUS_CHOISES,
 								default = 'draft')
+
+	objects		= models.Manager() # Default manager
+	published 	= PublishedManager() # A custom manage
 
 	class Meta:
 		ordering = ('-publish',)
