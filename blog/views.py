@@ -119,13 +119,12 @@ def post_search(request):
 		        if not results:
 		        	results = Resistors.published.annotate(
 		        		search=SearchVector('title', 'description'),
-		        		).filter(search=query)
-		        elif not results:
+		        		).filter(search=query) 
+		        if not results:
 		        	results = Capacitors.published.annotate(
 		        		search=SearchVector('title', 'description'),
-		        		).filter(search=query)
-		        else:
-		        	pass
+		        		).filter(search=query)      					        				
+
 	        except Exception as e:
 	        	raise
 	        else:
