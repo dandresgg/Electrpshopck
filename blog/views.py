@@ -123,7 +123,15 @@ def post_search(request):
 		        if not results:
 		        	results = Capacitors.published.annotate(
 		        		search=SearchVector('title', 'description'),
-		        		).filter(search=query)      					        				
+		        		).filter(search=query)   
+		        if not results:
+		        	results = Diodes.published.annotate(
+		        		search=SearchVector('title', 'description'),
+		        		).filter(search=query)
+		        if not results:
+		        	results = Transistors.published.annotate(
+		        		search=SearchVector('title', 'description'),
+		        		).filter(search=query)     					        				
 
 	        except Exception as e:
 	        	raise
