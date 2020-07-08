@@ -106,41 +106,34 @@ def post_search(request):
     form = SearchForm()
     query = None
     results = []
-    resultsr = []
-    resultsc = []
-    resultsd = []
-    resultst = []
     if 'query' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
         	'''querys'''
 	        query = form.cleaned_data['query']
 	        '''results'''
-	        results = Post.published.annotate(
+	        try:
+	        	results = Post.published.annotate(
 	            search=SearchVector('title', 'body'),
-	        ).filter(search=query)
-
-	        resultsr = Resistors.published.annotate(
-	            search=SearchVector('title', 'description'),
-	        ).filter(search=query)
-
-	        resultsc = Capacitors.published.annotate(
-	            search=SearchVector('title', 'description'),
-	        ).filter(search=query)
-
-	        resultsd = Diodes.published.annotate(
-	            search=SearchVector('title', 'description'),
-	        ).filter(search=query)
-
-	        resultst = Transistors.published.annotate(
-	            search=SearchVector('title', 'description'),
-	        ).filter(search=query)
+		        ).filter(search=query)
+		        if not results:
+			        results = Resistors.published.annotate(
+		            search=SearchVector('title', 'description'),
+			        ).filter(search=query)
+			    elif not results:
+			    	results = Capacitors.published.annotate(
+		            search=SearchVector('title', 'description'),
+			        ).filter(search=query)
+	        except Exception as e:
+	        	raise
+	        else:
+	        	pass
+	        finally:
+	        	pass
+	        
+	       
     return render(request,
                   'blog/search.html',
                   {'form': form,
                    'query': query,
-                   'results': results,
-                   'resultsr':resultsr,
-                   'resultsc':resultsc,
-                   'resultsd':resultsd,
-                   'resultst':resultst})
+                   'results': results})
