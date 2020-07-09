@@ -17,7 +17,7 @@ class Post(models.Model):
 		)
 
 	title 	= models.CharField(max_length=100)
-	slug 	= models.SlugField(max_length=100) 
+	slug 	= models.SlugField(max_length=255)
 	author  = models.ForeignKey(User, 
 								on_delete=models.CASCADE,
 								related_name='blog_post')
@@ -60,7 +60,7 @@ class Resistors(models.Model):
 		)
 
 	title 	= models.CharField(max_length=100)
-	slug 	= models.SlugField(max_length=100) 
+	slug 	= models.SlugField(max_length=255) 
 	author  = models.ForeignKey(User, 
 								on_delete=models.CASCADE,
 								related_name='blog_resistor')
@@ -115,7 +115,7 @@ class Capacitors(models.Model):
 		)
 
 	title 	= models.CharField(max_length=100)
-	slug 	= models.SlugField(max_length=100) 
+	slug 	= models.SlugField(max_length=255) 
 	author  = models.ForeignKey(User, 
 								on_delete=models.CASCADE,
 								related_name='blog_capacitor')
@@ -168,7 +168,7 @@ class Diodes(models.Model):
 		)
 
 	title 	= models.CharField(max_length=100)
-	slug 	= models.SlugField(max_length=100) 
+	slug 	= models.SlugField(max_length=255) 
 	author  = models.ForeignKey(User, 
 								on_delete=models.CASCADE,
 								related_name='blog_diode')
@@ -222,7 +222,7 @@ class Transistors(models.Model):
 		)
 
 	title 	= models.CharField(max_length=100)
-	slug 	= models.SlugField(blank=True) 
+	slug 	= models.SlugField(max_length=255)
 	author  = models.ForeignKey(User, 
 								on_delete=models.CASCADE,
 								related_name='blog_transistor')
