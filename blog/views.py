@@ -95,25 +95,17 @@ class ActiveView(ListView):
 		return context
 
 
-class DiodesDetailView(DetailView):
-	'''Componet's details'''
-	template_name = 'blog/component_detail.html'
-	slug_field = 'slug'
-	slug_url_kwarg = 'slug'
-	queryset = Diodes.objects.filter(division__contains='device')
-	context_object_name = 'component'
-	sucucces_url = reverse_lazy('blog:details')
-
-
-def post_search(request):
+def search(request):
     form = SearchForm()
     query = None
     results = []
     if 'query' in request.GET:
         form = SearchForm(request.GET)
+        print(query)
         if form.is_valid():
         	'''querys'''
 	        query = form.cleaned_data['query']
+	        
 	        '''results'''
 	        try:
 	        	results = Post.published.annotate(
@@ -149,3 +141,23 @@ def post_search(request):
                   {'form': form,
                    'query': query,
                    'results': results})
+
+
+class DiodesDetailView(DetailView):
+	'''Componet's details'''
+	template_name = 'blog/component_detail.html'
+	slug_field = 'slug'
+	slug_url_kwarg = 'slug'
+	queryset = Diodes.objects.filter(division__contains='device')
+	context_object_name = 'component'
+	sucucces_url = reverse_lazy('blog:details')
+
+class TransistorDetailView(DetailView):
+	'''Componet's details'''
+	template_name = 'blog/component_detail.html'
+	slug_field = 'slug'
+	slug_url_kwarg = 'slug'
+	queryset = Transistors.objects.filter(division__contains='device')
+	context_object_name = 'component'
+	sucucces_url = reverse_lazy('blog:details_t')
+

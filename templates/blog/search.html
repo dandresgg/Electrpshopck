@@ -6,22 +6,22 @@
 
 {% block content %}
   {% if query %}
-    <h1>Posts containing "{{ query }}"</h1>
+    <h1>Resultados de "{{ query }}"</h1>
     <h3>
       {% with results.count as total_results %}
-        Found {{ total_results }} result{{ total_results|pluralize }}
+        Encontrados {{ total_results }} resultado{{ total_results|pluralize }}
       {% endwith %}
     </h3>
     {% for post in results %}
       <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
       {{ post.body|markdown|truncatewords_html:5 }}
     {% empty %}
-      <p>No hay relustado para tu busqueda.</p>
+      <p>No hay relustados para tu busqueda.</p>
     {% endfor %}
     <p><a href="{% url "blog:post_search" %}">Busca nuevamente</a></p>
   {% else %}
     <h1>Que vas a buscar</h1>
-    <form method="get">
+    <form method="GET">
       {{ form.as_p }}
       <input type="submit" value="Buscar">
     </form>

@@ -11,7 +11,7 @@ urlpatterns =[
 		name = 'main_page'),	
 
 	path(route ='blog/search/', 
-		view = views.post_search, 
+		view = views.search, 
 		name='post_search'),
 
 	path(route = 'blog/pasive/',
@@ -22,7 +22,11 @@ urlpatterns =[
 		view = views.ActiveView.as_view(),
 		name = 'active'),
 
-	path(route = 'blog/<slug>/',
+	path(route = 'blog/diode/<slug>/',
 		view = views.DiodesDetailView.as_view(),
 		name = 'details'),	
+
+	path(route = 'blog/transitor/<slug>/',
+		view = views.TransistorDetailView.as_view(),
+		name = 'details_t'),
 ]
