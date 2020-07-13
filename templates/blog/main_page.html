@@ -1,11 +1,22 @@
 {% extends "base.html" %}
+{% load blog_tags %}
+
 
 {% block title %}Electroshopck{% endblock %}
 
 {% block content %}
 
+    {% for post in posts %}
+        {% include "post/list_post.html" %}
+    {% endfor %}
 
+{% endblock %}
 
-
-
+{% block sidebar %}
+<h2 style="text-align: center;">
+    <a href="{% url "blog:post_search" %}">BUSCAR</a>
+</h2>    
+    {% for post in posts %}
+        {% include "post/list_post_side.html" %}
+    {% endfor %}
 {% endblock %}

@@ -66,11 +66,10 @@ p.date {
 }
 
 .date {
-    color: black;
+    color: #ccc;
     font-family: georgia, serif;
     font-size: 0.8em;
     font-style: italic;
-    margin-top: 8px;
 }
 
 

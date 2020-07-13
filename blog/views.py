@@ -161,3 +161,14 @@ class TransistorDetailView(DetailView):
 	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details_t')
 
+class PostDetailView(DetailView):
+	'''Componet's details'''
+	template_name = 'post/post_detail.html'
+	slug_field = 'slug'
+	slug_url_kwarg = 'slug'
+	queryset = Post.objects.all()
+	context_object_name = 'post'
+	sucucces_url = reverse_lazy('blog:post_details')
+
+
+

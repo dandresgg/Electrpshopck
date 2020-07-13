@@ -29,4 +29,8 @@ urlpatterns =[
 	path(route = 'blog/transitor/<slug>/',
 		view = views.TransistorDetailView.as_view(),
 		name = 'details_t'),
+
+	path(route = 'blog/post/<slug>/',
+		view = views.PostDetailView.as_view(),
+		name = 'post_details'),
 ]

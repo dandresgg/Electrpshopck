@@ -40,6 +40,12 @@ class Post(models.Model):
 
 	def __str__(self):
 		return self.title
+	
+	def get_absolute_url(self):
+		return reverse('blog:post_details',
+						args=[self.publish.year,
+							  self.publish.month,
+							  self.publish.day, self.slug])
 
 
 class Resistors(models.Model):
@@ -96,6 +102,9 @@ class Resistors(models.Model):
 	def __str__(self):
 		return self.title
 
+	def get_absolute_url(self):
+		return reverse('blog:pasive')
+
 
 class Capacitors(models.Model):
 	''' resistors '''
@@ -150,6 +159,9 @@ class Capacitors(models.Model):
 	def __str__(self):
 		return self.title
 
+	def get_absolute_url(self):
+		return reverse('blog:pasive')
+
 
 class Diodes(models.Model):
 	''' resistors '''
@@ -203,6 +215,12 @@ class Diodes(models.Model):
 
 	def __str__(self):
 		return self.title
+	
+	def get_absolute_url(self):
+		return reverse('blog:details',
+						args=[self.publish.year,
+							  self.publish.month,
+							  self.publish.day, self.slug])
 
 
 class Transistors(models.Model):
@@ -257,3 +275,9 @@ class Transistors(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def get_absolute_url(self):
+		return reverse('blog:details_t',
+						args=[self.publish.year,
+							  self.publish.month,
+							  self.publish.day, self.slug])

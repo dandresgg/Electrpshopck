@@ -1,0 +1,12 @@
+{% load blog_tags %}
+<a href="{% url "blog:post_details" post.slug %}">
+    <div>
+        <h2>
+            {{ post.title }}
+        </h2>        
+        <img class="center-image-2" src="{{ post.image.url }}" alt="{{ post.title }}">
+        <div class="date">
+            {{ post.body|truncatewords_html:100 }}
+        </div>
+    </div> 
+</a>

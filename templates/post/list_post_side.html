@@ -1,0 +1,8 @@
+<a href="{% url "blog:post_details" post.slug %}">
+    <h3 class="sidebar_color">
+        {{ post.title }}
+    </h3>        
+    <p class="date">
+        {{ post.body|truncatewords_html:10 }}
+    </p>
+</a>
