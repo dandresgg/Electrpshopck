@@ -220,9 +220,7 @@ class Diodes(models.Model):
 	
 	def get_absolute_url(self):
 		return reverse('blog:details',
-						args=[self.publish.year,
-							  self.publish.month,
-							  self.publish.day, self.slug])
+						args=[self.slug])
 
 
 class Transistors(models.Model):
@@ -280,6 +278,4 @@ class Transistors(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('blog:details_t',
-						args=[self.publish.year,
-							  self.publish.month,
-							  self.publish.day, self.slug])
+						args=[self.slug])
