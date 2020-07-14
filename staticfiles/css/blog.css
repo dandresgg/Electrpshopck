@@ -245,7 +245,8 @@ input[type="submit"] {
 }
 
 .center-image-3 {
-    height: 100px;
+    height: 300px;
+    width: 300px;
     object-fit: cover; 
     margin-top: 8px;
     margin-left: auto;
