@@ -289,12 +289,5 @@ input[type="submit"] {
         height: 150px;
         object-fit: contain;
     }
-    .navp-sub a {
-        font-size: xx-small;
-    }
-    .navp a {
-        font-size: x-small;
-    }
-
 
 }
