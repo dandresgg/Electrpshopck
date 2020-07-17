@@ -19,8 +19,10 @@ class PostMainPage(ListView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
+		posts = Post.objects.all()
 		context = {
 			'form':form,
+			'posts':posts
 		}
 		return context
 
@@ -170,8 +172,10 @@ class DiodesDetailView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
+		diodes = Diodes.objects.filter(division__contains='device')
 		context = {
 			'form':form,
+			'diodes':'diodes'
 		}
 		return context
 
@@ -187,8 +191,10 @@ class TransistorDetailView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
+		transistors = Transistors.objects.filter(division__contains='device')
 		context = {
 			'form':form,
+			'transistors':transistors
 		}
 		return context
 
@@ -204,8 +210,10 @@ class PostDetailView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
+		posts = Post.objects.all()
 		context = {
 			'form':form,
+			'posts':posts
 		}
 		return context
 
