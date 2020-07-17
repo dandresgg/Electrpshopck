@@ -16,14 +16,11 @@ class PostMainPage(ListView):
 	queryset = Post.objects.all()
 	sucucces_url = reverse_lazy('blog:main_page')
 
-	def get_context_data(self, *args, **kwargs):
+	def get_context_data(self, **kwargs):
+		'''Add User post to context'''
+		context = super().get_context_data(**kwargs)
 		form = SearchForm()
-		devise = 'Dispositivos Activos'
-		posts = Post.objects.all()
-		context = {
-			'form':form,
-			'posts':posts
-		}
+		context['form'] = form
 		return context
 
 
@@ -169,14 +166,11 @@ class DiodesDetailView(DetailView):
 	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details')
 
-	def get_context_data(self, *args, **kwargs):
+	def get_context_data(self, **kwargs):
+		'''Add User post to context'''
+		context = super().get_context_data(**kwargs)
 		form = SearchForm()
-		devise = 'Dispositivos Activos'
-		component = Diodes.objects.filter(division__contains='device')
-		context = {
-			'form':form,
-			'component':'component'
-		}
+		context['form'] = form
 		return context
 
 class TransistorDetailView(DetailView):
@@ -188,15 +182,14 @@ class TransistorDetailView(DetailView):
 	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details_t')
 
-	def get_context_data(self, *args, **kwargs):
+	def get_context_data(self, **kwargs):
+		'''Add User post to context'''
+		context = super().get_context_data(**kwargs)
 		form = SearchForm()
-		devise = 'Dispositivos Activos'
-		component = Transistors.objects.filter(division__contains='device')
-		context = {
-			'form':form,
-			'component':component
-		}
+		user = self.request.user
+		context['form'] = form
 		return context
+
 
 class PostDetailView(DetailView):
 	'''Componet's details'''
@@ -207,14 +200,12 @@ class PostDetailView(DetailView):
 	context_object_name = 'post'
 	sucucces_url = reverse_lazy('blog:post_details')
 
-	def get_context_data(self, *args, **kwargs):
+	def get_context_data(self, **kwargs):
+		'''Add User post to context'''
+		context = super().get_context_data(**kwargs)
+		post = self.get_object()
 		form = SearchForm()
-		devise = 'Dispositivos Activos'
-		post = Post.objects.all()
-		context = {
-			'form':form,
-			'post':post
-		}
+		context['form'] = form
 		return context
 
 
