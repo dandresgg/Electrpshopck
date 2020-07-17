@@ -175,7 +175,7 @@ class DiodesDetailView(DetailView):
 		diodes = Diodes.objects.filter(division__contains='device')
 		context = {
 			'form':form,
-			'diodes':'diodes'
+			'component':'component'
 		}
 		return context
 
@@ -194,7 +194,7 @@ class TransistorDetailView(DetailView):
 		transistors = Transistors.objects.filter(division__contains='device')
 		context = {
 			'form':form,
-			'transistors':transistors
+			'component':component
 		}
 		return context
 
@@ -213,7 +213,7 @@ class PostDetailView(DetailView):
 		posts = Post.objects.all()
 		context = {
 			'form':form,
-			'posts':posts
+			'post':post
 		}
 		return context
 
