@@ -172,7 +172,7 @@ class DiodesDetailView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
-		diodes = Diodes.objects.filter(division__contains='device')
+		component = Diodes.objects.filter(division__contains='device')
 		context = {
 			'form':form,
 			'component':'component'
@@ -191,7 +191,7 @@ class TransistorDetailView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
-		transistors = Transistors.objects.filter(division__contains='device')
+		component = Transistors.objects.filter(division__contains='device')
 		context = {
 			'form':form,
 			'component':component
@@ -210,7 +210,7 @@ class PostDetailView(DetailView):
 	def get_context_data(self, *args, **kwargs):
 		form = SearchForm()
 		devise = 'Dispositivos Activos'
-		posts = Post.objects.all()
+		post = Post.objects.all()
 		context = {
 			'form':form,
 			'post':post
