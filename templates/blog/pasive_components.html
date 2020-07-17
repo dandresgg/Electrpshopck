@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+
 <ul class="navp">	
 	<li><a href="#tab1"> Resistencias </a></li>
  	<li><a href="#tab2"> Capacitores </a></li>
@@ -30,9 +31,7 @@
 
 
 {% block sidebar %}
-<h2 style="text-align: center;">
-  <a href="{% url "blog:post_search" %}">BUSCAR</a>
-</h2>
+
 <div class="sidebar-info">
   <div class="side-infor">
     <!--   {% for component in resistors_general %}

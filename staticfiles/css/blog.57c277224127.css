@@ -282,10 +282,6 @@ input[type="submit"] {
     .form_search2{
         display: grid;
     }
-
-    input[type="submit"]{
-        font-size: 10px;
-    }
 }
 
 @media screen and (max-width:570px){

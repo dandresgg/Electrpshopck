@@ -266,25 +266,9 @@ input[type="submit"] {
     display: block;
 }
 
-.form_search2{
-    display: none;
-}
-
 @media screen and (max-width:720px){
     #sidebar {
         width: -webkit-fill-available;    
-    }
-  
-    .form_search{
-        display: none;
-    }
-
-    .form_search2{
-        display: grid;
-    }
-
-    input[type="submit"]{
-        font-size: 10px;
     }
 }
 
@@ -314,11 +298,6 @@ input[type="submit"] {
     .navp a {
         font-size: x-small;
     }
-    .navp-sub{
-        flex-wrap: wrap;
-    }
-    .navp-sub li{
-        margin-top: 1px;
-    }
-   
+
+
 }

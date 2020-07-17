@@ -269,22 +269,20 @@ input[type="submit"] {
 .form_search2{
     display: none;
 }
+.form_search{
+    display: block;
+}
 
 @media screen and (max-width:720px){
     #sidebar {
         width: -webkit-fill-available;    
     }
-  
-    .form_search{
-        display: none;
-    }
 
     .form_search2{
-        display: grid;
+        display: block;
     }
-
-    input[type="submit"]{
-        font-size: 10px;
+    .form_search{
+        display: none;
     }
 }
 

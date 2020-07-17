@@ -16,6 +16,14 @@ class PostMainPage(ListView):
 	queryset = Post.objects.all()
 	sucucces_url = reverse_lazy('blog:main_page')
 
+	def get_context_data(self, *args, **kwargs):
+		form = SearchForm()
+		devise = 'Dispositivos Activos'
+		context = {
+			'form':form,
+		}
+		return context
+
 
 class PasiveView(ListView):
 	'''return pasive components'''
@@ -44,6 +52,8 @@ class PasiveView(ListView):
 		diodes_schottky	= Diodes.objects.filter(division__contains='shottky')
 		diodes_d	= Diodes.objects.filter(division__contains='device')
 
+		form = SearchForm()
+
 		devise = 'Dispositivos Pasivos'
 		context = {
 			#resistors context
@@ -65,6 +75,8 @@ class PasiveView(ListView):
 			'diodes_schottky': diodes_schottky,
 			'diodes_d': diodes_d,
 			'devise':devise,
+
+			'form':form,
 		}
 		return context
 
@@ -84,6 +96,7 @@ class ActiveView(ListView):
 		transistors_p	= Transistors.objects.filter(division__contains='fototransistor')
 		transistors_d	= Transistors.objects.filter(division__contains='device') 
 		devise = 'Dispositivos Activos'
+		form = SearchForm()
 		context = {
 			'transistors_g':transistors_g,
 			'transistors_b':transistors_b,
@@ -91,6 +104,8 @@ class ActiveView(ListView):
 			'transistors_m':transistors_m,
 			'transistors_d':transistors_d,
 			'devise':devise,
+
+			'form':form,
 		}
 		return context
 
@@ -152,6 +167,14 @@ class DiodesDetailView(DetailView):
 	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details')
 
+	def get_context_data(self, *args, **kwargs):
+		form = SearchForm()
+		devise = 'Dispositivos Activos'
+		context = {
+			'form':form,
+		}
+		return context
+
 class TransistorDetailView(DetailView):
 	'''Componet's details'''
 	template_name = 'blog/component_detail.html'
@@ -161,6 +184,14 @@ class TransistorDetailView(DetailView):
 	context_object_name = 'component'
 	sucucces_url = reverse_lazy('blog:details_t')
 
+	def get_context_data(self, *args, **kwargs):
+		form = SearchForm()
+		devise = 'Dispositivos Activos'
+		context = {
+			'form':form,
+		}
+		return context
+
 class PostDetailView(DetailView):
 	'''Componet's details'''
 	template_name = 'post/post_detail.html'
@@ -169,6 +200,14 @@ class PostDetailView(DetailView):
 	queryset = Post.objects.all()
 	context_object_name = 'post'
 	sucucces_url = reverse_lazy('blog:post_details')
+
+	def get_context_data(self, *args, **kwargs):
+		form = SearchForm()
+		devise = 'Dispositivos Activos'
+		context = {
+			'form':form,
+		}
+		return context
 
 
 

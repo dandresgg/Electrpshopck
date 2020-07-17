@@ -15,13 +15,11 @@
 {% endblock %}
 
 {% block sidebar %}
-		<h2 style="text-align: center;">
-			<a href="{% url "blog:post_search" %}">BUSCAR</a>
-		</h2>
+		
 		<img class="center-image-3" src="{{ component.image.url }}" alt="{{ component.title }}">
 
 		<h3 class="sidebar_color">Componentes similares</h3>
-		{{ component.similar_components }}
+		{{ component.similar_components|markdown }}
 
 		<h3 class="sidebar_color">Aplicaciones</h3>
 		{{ component.aplications|markdown }}
