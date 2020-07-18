@@ -18,12 +18,7 @@
     {% empty %}
       <p>No hay relustados para tu busqueda.</p>
     {% endfor %}
-    <p><a href="{% url "blog:post_search" %}">Busca nuevamente</a></p>
   {% else %}
-    <h1>Que vas a buscar</h1>
-    <form method="GET">
-      {{ form.as_p }}
-      <input type="submit" value="Buscar">
-    </form>
+   
 {% endif %}
 {% endblock %}
