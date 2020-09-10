@@ -27,7 +27,8 @@ SECRET_KEY = '#xo($@=vq$j-*=2e=3s_l+8(z_-!uewiez!yay83b)esdj$y37'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'electroshopckblog.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
+                 '127.0.0.1', 'electroshopckblog.herokuapp.com']
 
 
 # Application definition
@@ -39,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    #Personal
+
+    # Personal
     'blog',
 
     'whitenoise.runserver_nostatic',
@@ -145,7 +146,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'STATIC-BUCKED')
 
-MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # MEDIA_URL: 'https://storage.googleapis.com/ltdf-bucked/media/'
 

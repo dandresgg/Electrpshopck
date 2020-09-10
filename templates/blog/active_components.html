@@ -1,21 +1,20 @@
 {% extends "base.html"%}
 {% load blog_tags %}
 
-
 {% block title%}
-	Dispositivos activos
+Dispositivos activos
 {% endblock %}
 
 
 {% block content %}
 
-<ul class="navp">	
-	<li><a href="#tab1"> Transistores </a></li>
+<ul class="navp">
+  <li><a href="#tab1"> Transistores </a></li>
 </ul>
 <div class="info">
-	
+
   <article id="tab1">
-         {% include "transistors/list_transistors.html" %}
+    {% include "transistors/list_transistors.html" %}
   </article>
 
 </div>
@@ -25,10 +24,10 @@
 
 <div class="sidebar-info">
   <div class="side-infor">
-    <h3 class="sidebar_color">Elementos relacionados</h3> 
-      {% for component in transistors_d %}
-        {% include "component/general_component_transistor.html" %}
-      {% endfor%}
+    <h1>Elementos relacionados</h1>
+    {% for component in transistors_d %}
+    {% include "component/general_component_transistor.html" %}
+    {% endfor %}
   </div>
 
   <div class="side-infoc">
@@ -38,10 +37,10 @@
   </div>
 
   <div class="side-infod">
-    <h3 class="sidebar_color">Elementos relacionados</h3> 
-     <!-- {% for component in diodes_d %}
+    <h3 class="sidebar_color">Elementos relacionados</h3>
+    <!-- {% for component in diodes_d %}
         {% include "component/general_component_main.html" %}
       {% endfor%} -->
   </div>
 </div>
-{% endblock %} 
+{% endblock %}

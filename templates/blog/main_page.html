@@ -1,21 +1,21 @@
-{% extends "base.html" %}
-{% load blog_tags %}
+{% extends "base.html" %} {% load blog_tags %}
 
+<div>{% block title %}Electroshopck{% endblock %}</div>
 
-{% block title %}Electroshopck{% endblock %}
-
-{% block content %}
-
+<div>
+  {% block content %}
+  <div class="distribute-posts-main-page">
     {% for post in posts %}
+      <div class="grid-posts-mainpage">
         {% include "post/list_post.html" %}
+      </div>
     {% endfor %}
+  </div>
+  {% endblock %}
+</div>
 
-{% endblock %}
-
-{% block sidebar %}
-  
-    {% for post in posts %}
-        {% include "post/list_post_side.html" %}
-    {% endfor %}
-
-{% endblock %}
+<div>
+  {% block sidebar %} {% for post in posts %}
+  <div>{% include "post/list_post_side.html" %}</div>
+  {% endfor %} {% endblock %}
+</div>

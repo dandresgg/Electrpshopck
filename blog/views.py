@@ -117,9 +117,9 @@ def search(request):
         form = SearchForm(request.GET)
         print(query)
         if form.is_valid():
-        	'''querys'''
+        	'''queries'''
 	        query = form.cleaned_data['query']
-	        
+
 	        '''results'''
 	        try:
 	        	results = Post.published.annotate(
@@ -128,11 +128,11 @@ def search(request):
 		        if not results:
 		        	results = Resistors.published.annotate(
 		        		search=SearchVector('title', 'description'),
-		        		).filter(search=query) 
+		        		).filter(search=query)
 		        if not results:
 		        	results = Capacitors.published.annotate(
 		        		search=SearchVector('title', 'description'),
-		        		).filter(search=query)   
+		        		).filter(search=query)
 		        if not results:
 		        	results = Diodes.published.annotate(
 		        		search=SearchVector('title', 'description'),
@@ -140,7 +140,7 @@ def search(request):
 		        if not results:
 		        	results = Transistors.published.annotate(
 		        		search=SearchVector('title', 'description'),
-		        		).filter(search=query)     					        				
+		        		).filter(search=query)
 
 	        except Exception as e:
 	        	raise
@@ -148,8 +148,7 @@ def search(request):
 	        	pass
 	        finally:
 	        	pass
-	        
-	       
+
     return render(request,
                   'blog/search.html',
                   {'form': form,
