@@ -322,6 +322,9 @@ input[type="submit"] {
         width: -webkit-fill-available;
         padding: 10px;
     }
+    h1 {
+        font-size: x-large;
+    }
     h2 {
         font-size: inherit;
     }
@@ -330,7 +333,7 @@ input[type="submit"] {
     }
     .center-image-2 {
         width: -webkit-fill-available;
-        height: 100px;
+        height: 150px;
         object-fit: contain;
     }
     .navp-sub a {

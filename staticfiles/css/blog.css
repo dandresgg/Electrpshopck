@@ -37,12 +37,13 @@ h6 {
 #content {
     float: left;
     width: 65%;
+    padding: 0 1em 0 1em;
 }
 
 #sidebar {
     float: right;
     width: 30%;
-    padding: 10px;
+    padding: 5px;
     height: 100%;
     text-align: inherit;
     display: grid;
@@ -321,9 +322,6 @@ input[type="submit"] {
         width: -webkit-fill-available;
         padding: 10px;
     }
-    h1 {
-        font-size: x-large;
-    }
     h2 {
         font-size: inherit;
     }
@@ -332,7 +330,7 @@ input[type="submit"] {
     }
     .center-image-2 {
         width: -webkit-fill-available;
-        height: 150px;
+        height: 100px;
         object-fit: contain;
     }
     .navp-sub a {

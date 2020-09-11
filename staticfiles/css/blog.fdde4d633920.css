@@ -322,6 +322,9 @@ input[type="submit"] {
         width: -webkit-fill-available;
         padding: 10px;
     }
+    h1 {
+        font-size: x-large;
+    }
     h2 {
         font-size: inherit;
     }
