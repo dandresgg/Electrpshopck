@@ -17,6 +17,7 @@
 {% block sidebar %}
 		
 		<img class="center-image-3" src="{{ component.image.url }}" alt="{{ component.title }}">
+		<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
 
 		<h1>Componentes similares</h1>
 		{{ component.similar_components|markdown }}
@@ -25,6 +26,6 @@
 		{{ component.aplications|markdown }}
 
 
-		<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
+		
 
 {% endblock %}

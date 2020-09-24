@@ -310,7 +310,7 @@ input[type="submit"] {
         display: grid;
     }
     #sidebar {
-        padding: 0px;
+        padding: 10px;
     }
     input[type="submit"] {
         font-size: 10px;
