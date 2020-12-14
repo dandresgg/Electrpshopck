@@ -29,7 +29,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
-                 '127.0.0.1', 'electroshopckblog.herokuapp.com']
+                 '127.0.0.1', 'eshopck.herokuapp.com']
 
 
 # Application definition
