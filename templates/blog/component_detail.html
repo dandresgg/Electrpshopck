@@ -7,25 +7,16 @@
 
 {% block content %}
 	<h1> Descripción </h1>
-	{{ component.description|markdown}}
+		{{ component.description|markdown}}
 	<h1>Caracteristicas</h1>
-	{{ component.features|markdown }}
-	
-
+		{{ component.features|markdown }}
 {% endblock %}
 
-{% block sidebar %}
-		
+{% block sidebar %}		
 		<img class="center-image-3" src="{{ component.image.url }}" alt="{{ component.title }}">
 		<a href="{{ component.datasheet }}" target="blank">Datasheet</a>
-
 		<h1>Componentes similares</h1>
-		{{ component.similar_components|markdown }}
-
+			{{ component.similar_components|markdown }}
 		<h1>Aplicaciones</h1>
-		{{ component.aplications|markdown }}
-
-
-		
-
+			{{ component.aplications|markdown }}
 {% endblock %}
