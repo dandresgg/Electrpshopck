@@ -70,6 +70,7 @@ p.date {
     font-size: 0.8em;
     font-style: italic;
     margin-top: 8px;
+    opacity: 0.5;
 }
 
 
@@ -84,7 +85,8 @@ p.date {
 }
 
 .post-title {
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-size: 0.9rem;
 }
 
 
@@ -281,7 +283,43 @@ input[type="submit"] {
     margin: 1em;
     border: 4px solid #12c064;
     border-radius: 20px;
+    box-shadow: 0px 0px 1px 3px #ccc inset;
+    transform: scale(0.9);
+    transition: transform 500ms ease;
+}
+
+@keyframes mainFadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+}
+}
+@keyframes boxFadeIn {
+  0% {
+    box-shadow: 0px 0px 1px 3px #ccc inset;
+  }
+  100% {
     box-shadow: 0px 0px 1px 3px #000 inset;
+}
+}
+
+  
+.grid-posts-mainpage:hover{
+    transform: scale(1);
+    transition: transform 500ms ease;
+    font-weight: bold;
+    animation:boxFadeIn 1.5s forwards;
+    }
+
+.grid-posts-mainpage:hover .post-title{
+    font-weight: bold;
+    animation:mainFadeIn 1.5s forwards;
+}
+ 
+.grid-posts-mainpage:hover .date{
+    animation:mainFadeIn 1.5s forwards;
 }
 
 .distribute-posts-main-page {

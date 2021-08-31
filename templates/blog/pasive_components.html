@@ -6,43 +6,34 @@
 {% endblock %}
 
 {% block content %}
-
 <ul class="navp">	
 	<li><a href="#tab1"> Resistencias </a></li>
  	<li><a href="#tab2"> Capacitores </a></li>
  	<li><a href="#tab3"> Diodos </a></li>
 </ul>
-
 <div class="info">	
     <article id="tab1">
       {% include "resistors/list_resistors.html" %}
     </article>
-
     <article id="tab2">
        {% include "capacitors/list_capacitors.html" %}
     </article>
-
     <article id="tab3">
       {% include "diodes/list_diodes.html" %}
     </article>
 </div>
 {% endblock %}
 
-
-
 {% block sidebar %}
-
 <div class="sidebar-info">
   <div class="side-infor">
     {% include "resistors/calculator.html" %}  
   </div>
-
   <div class="side-infoc">
     <!--  {% for component in capacitors_g %}
         {% include "component/general_component_main.html" %}
       {% endfor%} -->
   </div>
-
   <div class="side-infod">
     <h1>Elementos relacionados</h1> 
      {% for component in diodes_d %}
