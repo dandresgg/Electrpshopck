@@ -8,9 +8,18 @@
 
 <div>
 <nav class="navbar">
- <ul><a href="{% url "blog:main_page" %}">Home</a></ul>
- <ul><a href="{% url "blog:pasive" %}">Pasivos</a></ul>
- <ul><a href="{% url "blog:active" %}">Activos</a></ul>
+	<ul>
+		<a href="{% url "blog:main_page" %}" class="a-nav">Home</a>
+		<h6 class="hide">Principal</h6>
+	</ul>
+	<ul>
+		<a href="{% url "blog:pasive" %}" class="a-nav">Pasivos</a>
+		<h6 class="hide">Dispositivos Pasivos</h6>
+	</ul>
+	<ul>
+		<a href="{% url "blog:active" %}" class="a-nav">Activos</a>
+		<h6 class="hide">Dispositivos Activos</h6>
+	</ul>
 </nav>
 {% include "component/form_search2.html" %}
 </div>
