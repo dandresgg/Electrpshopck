@@ -270,7 +270,7 @@ input[type="submit"]:hover {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    height: fit-content;
+    height: 250px;
 }
 
 .center-image-3 {
@@ -354,7 +354,7 @@ input[type="submit"]:hover {
 }
 
 .grid-img-separator {
-    width: 100px;
+    width: 200px;
     text-align: center;
 }
 
@@ -418,7 +418,7 @@ input[type="submit"]:hover {
     }
     .center-image-2 {
         width: -webkit-fill-available;
-        height: 100px;
+        height: 200px;
         object-fit: contain;
     }
     .navp-sub a {
@@ -432,5 +432,12 @@ input[type="submit"]:hover {
     }
     .navp-sub li {
         margin-top: 1px;
+    }
+}
+
+
+@media screen and(max-width: 480px){
+    .grid-img-separator {
+        width: 100px;
     }
 }
