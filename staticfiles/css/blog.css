@@ -436,7 +436,8 @@ input[type="submit"]:hover {
 }
 
 
-@media screen and(max-width: 480px) {
+@media screen and (max-width: 480px) {
+    
     .grid-img-separator {
         width: 150px;
     }
