@@ -347,6 +347,18 @@ input[type="submit"]:hover {
     animation:mainFadeIn 1.5s forwards;
 }
 
+.grid-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.grid-img-separator {
+    width: 100px;
+    text-align: center;
+}
+
+
 .distribute-posts-main-page {
     display: flex;
     text-align: center;
