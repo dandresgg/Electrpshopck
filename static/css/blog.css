@@ -376,8 +376,8 @@ input[type="submit"]:hover {
  
 
 .table-calculator tr, td {
-    font-size: 1em;
-    border: none;
+    font-size: .9em;
+    border: 0px;
 }
 
 .cap_table_calculator {
@@ -386,11 +386,17 @@ input[type="submit"]:hover {
 
 .cal-capacitor {
     border: 2px solid;
-    padding: 1rem;
     background-color: #e20505c4;
     text-align: center;
     margin: auto;
 }
+
+
+.cal-calculator tr, td {
+    font-size: .7em;
+    border: 0px;
+}
+
 
 @media screen and (max-width: 768px) {
     #content {
