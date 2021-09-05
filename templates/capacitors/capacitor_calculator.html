@@ -1,0 +1,62 @@
+
+<h1>Calculador de capacitores</h1>
+
+<table cellpadding="10" id="bandCode" class="cal-capacitor"><tbody><tr>
+<td>
+<b>1 digito:</b><br>
+</td>
+<td>
+<b>2 digito:</b><br>
+</td>
+<td valign="top">
+<b>Mult:</b><br>
+</td>
+<td valign="top">
+<b>Tol:</b><br>
+</td>
+<td valign="top">
+<b>V:</b><br>
+</td>
+
+</tr>
+
+<form name="bandSelect" method="" action="">
+<td>
+  <select name="band1" value="1" onChange="calcCapacitance(this)" class="cap_table_calculator">
+    {% include "capacitors/capacito_band1.html" %}
+  </select>
+</td>
+<td>
+  <select name="band2" value="1" onChange="calcCapacitance(this)" class="cap_table_calculator">
+    {% include "capacitors/capacitor_band2.html" %}
+  </select>
+</td>
+<td>
+  <select name="band3" value="1" onChange="calcCapacitance(this)" class="cap_table_calculator">
+    {% include "capacitors/capacitor_band3.html" %}
+  </select>
+</td>
+<td>
+  <select name="band4" value="1" onChange="calcCapacitance(this)" class="cap_table_calculator">
+    {% include "capacitors/capacitor_band4.html" %}
+  </select>
+</td>
+<td>
+  <select name="band5" value="1" onChange="calcCapacitance(this)" class="cap_table_calculator">
+    {% include "capacitors/capacitor_band5.html" %}
+  </select>
+</td>
+
+</form>
+
+</tbody>
+
+</table>-
+
+<h3 style="text-align: center;"><text id="capacitorValue">0 pF </text></h3>
+<h4 style="text-align: center; color: red;"><text id="capacitorVoltage"></text></h4>
+
+<script>
+  {% include "capacitors/calculator_cap_program.js" %}
+</script>
+
