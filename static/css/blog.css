@@ -273,8 +273,7 @@ input[type="submit"]:hover {
 }
 
 .center-image-3 {
-    height: 300px;
-    width: 300px;
+    width: 500px;
     object-fit: fill;
     margin-top: 8px;
     margin-left: auto;
@@ -431,9 +430,15 @@ input[type="submit"]:hover {
     .sidebar_color {
         font-size: inherit;
     }
+    .center-image {
+        height: 100px;
+    }
     .center-image-2 {
         width: -webkit-fill-available;
         object-fit: contain;
+    }
+    .center-image-3{
+        width: fit-content;
     }
     .navp-sub a {
         font-size: xx-small;
